@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/ronBP95/just_apod#readme",
   "dependencies": {
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15"
   }
 }

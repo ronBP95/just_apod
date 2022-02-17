@@ -139,4 +139,28 @@ h1 {
     font-family: "fontOne";
 }
 
+.bigCont {
+    display: inline-block;
+    /* background-color: #333; */
+    height: 75vh;
+    width: 75vw;
+}
+
+#bigChild {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#leftCont {
+    background: red;
+    height: 60vh;
+    width: 60vh;
+}
+
+#rightCont {
+    background: green;
+    height: 60vh;
+    width: 60vh;
+}
 

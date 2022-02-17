@@ -1,0 +1,23 @@
+{
+  "name": "just_apod",
+  "version": "1.0.0",
+  "description": "App for NASA APOD",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ronBP95/just_apod.git"
+  },
+  "keywords": [
+    "NASA",
+    "APOD"
+  ],
+  "author": "ronBP95",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ronBP95/just_apod/issues"
+  },
+  "homepage": "https://github.com/ronBP95/just_apod#readme"
+}

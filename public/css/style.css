@@ -154,6 +154,8 @@ h1 {
 
 #leftCont {
     display: flex;
+    flex-direction: column;
+    line-height: 0.25em;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -170,5 +172,7 @@ h1 {
     background: green;
     height: 60vh;
     width: 60vh;
+    word-wrap: break-word;
+    font-size: 6pt;
 }
 

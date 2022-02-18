@@ -19,13 +19,15 @@ app.use(Express.static(path.join(__dirname, 'public')));
 
 // ROUTES
 app.get('/', (req, res) => {
-    axios.get('https://api.nasa.gov/planetary/apod?api_key=' + `${process.env.secret}`)
+    axios.get('https://api.nasa.gov/planetary/apod?api_key=' + `${process.env.apod_secret}`)
     .then((response) => {
         console.log(response.data)
         const nasa = {
             title: response.data.title,
             date: response.data.date,
             type: response.data.media_type,
+            copyright: response.data.copyright,
+            explanation: response.data.explanation,
         }
         res.render('index.ejs', nasa)
     })

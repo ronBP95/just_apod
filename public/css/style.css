@@ -144,6 +144,8 @@ h1 {
     /* background-color: #333; */
     height: 75vh;
     width: 75vw;
+    font-family: "fontOne";
+    color: white;
 }
 
 #bigChild {
@@ -159,9 +161,15 @@ h1 {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: red;
+    /* background: red; */
     height: 60vh;
     width: 60vh;
+}
+
+#apodMedia {
+    height: 20em;
+    width: 20em;
+    border: 1px solid white;
 }
 
 #rightCont {
@@ -169,7 +177,7 @@ h1 {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: green;
+    /* background: green; */
     height: 60vh;
     width: 60vh;
     word-wrap: break-word;

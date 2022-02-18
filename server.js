@@ -14,7 +14,7 @@ const __dirname = path.dirname(__filename);
 app.use(Express.json());
 app.use(Express.urlencoded({extended: false}));
 
-// Set static folder (disabled as dynamic assets are being used)
+// Set static folder 
 app.use(Express.static(path.join(__dirname, 'public')));
 
 // ROUTES
@@ -28,6 +28,7 @@ app.get('/', (req, res) => {
             type: response.data.media_type,
             copyright: response.data.copyright,
             explanation: response.data.explanation,
+            mediaUrl: response.data.url,
         }
         res.render('index.ejs', nasa)
     })

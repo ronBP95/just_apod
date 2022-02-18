@@ -14,7 +14,7 @@ app.use(Express.json());
 app.use(Express.urlencoded({extended: false}));
 
 // Set static folder (disabled as dynamic assets are being used)
-// app.use(Express.static(path.join(__dirname, 'public')));
+app.use(Express.static(path.join(__dirname, 'public')));
 
 let myCss  ={
     style : fs.readFileSync('./public/css/style.css', 'utf8')

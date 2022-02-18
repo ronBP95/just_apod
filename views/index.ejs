@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css" />
     <title>Homepage</title>
-    <style> <%- myCss.style %> </style>
 </head>
 <body>
 
@@ -34,7 +33,9 @@
     <div class="bigCont">
         <div id="bigChild">
             <div id="leftCont">
-                <h1><%- JSON.stringify(data) %></h1>
+                <p><%= title %></p>
+                <p><%= date %></p>
+                <p><%= type%></p>
             </div>
             <div id="rightCont">
                 <h1>right cont</h1>

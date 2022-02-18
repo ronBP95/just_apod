@@ -4,7 +4,7 @@ import { fileURLToPath } from "url";
 import axios from "axios"
 import fs from "fs"
 import { nextTick } from "process";
-import sendGetRequest from './client.js'
+import expressLayouts from "express-ejs-layouts";
 
 const app = Express();
 const PORT = process.env.PORT || 3000;
@@ -24,11 +24,15 @@ let myCss  ={
 
 // ROUTES
 app.get('/', (req, res) => {
-    sendGetRequest();
-    res.render('index.ejs', {
-        title: 'just_APOD',
-        myCss: myCss,
-        data: response.data,
+    axios.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY')
+    .then((response) => {
+        console.log(response.data)
+        const nasa = {
+            title: response.data.title,
+            date: response.data.date,
+            type: response.data.media_type,
+        }
+        res.render('index.ejs', nasa)
     })
 })
 

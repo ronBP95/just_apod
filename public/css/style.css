@@ -153,12 +153,20 @@ h1 {
 }
 
 #leftCont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     background: red;
     height: 60vh;
     width: 60vh;
 }
 
 #rightCont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     background: green;
     height: 60vh;
     width: 60vh;

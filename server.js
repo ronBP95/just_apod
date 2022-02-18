@@ -1,8 +1,10 @@
-import Express, { urlencoded } from "express"
+import Express, { response, urlencoded } from "express"
 import path from "path"
 import { fileURLToPath } from "url";
 import axios from "axios"
 import fs from "fs"
+import { nextTick } from "process";
+import sendGetRequest from './client.js'
 
 const app = Express();
 const PORT = process.env.PORT || 3000;
@@ -22,9 +24,11 @@ let myCss  ={
 
 // ROUTES
 app.get('/', (req, res) => {
+    sendGetRequest();
     res.render('index.ejs', {
         title: 'just_APOD',
-        myCss: myCss
+        myCss: myCss,
+        data: response.data,
     })
 })
 

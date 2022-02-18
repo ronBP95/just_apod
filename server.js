@@ -18,8 +18,11 @@ app.use(Express.urlencoded({extended: false}));
 app.use(Express.static(path.join(__dirname, 'public')));
 
 // ROUTES
+
+// Without API KEY
+
 app.get('/', (req, res) => {
-    axios.get('https://api.nasa.gov/planetary/apod?api_key=' + `${process.env.apod_secret}`)
+    axios.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY')
     .then((response) => {
         console.log(response.data)
         const nasa = {
@@ -34,5 +37,25 @@ app.get('/', (req, res) => {
     })
     console.log(process.env)
 })
+
+
+// With API KEY
+
+// app.get('/', (req, res) => {
+//     axios.get('https://api.nasa.gov/planetary/apod?api_key=' + `${process.env.apod_secret}`)
+//     .then((response) => {
+//         console.log(response.data)
+//         const nasa = {
+//             title: response.data.title,
+//             date: response.data.date,
+//             type: response.data.media_type,
+//             copyright: response.data.copyright,
+//             explanation: response.data.explanation,
+//             mediaUrl: response.data.url,
+//         }
+//         res.render('index.ejs', nasa)
+//     })
+//     console.log(process.env)
+// })
 
 app.listen (PORT, () => console.log(`Server started on Port: ${PORT}`))

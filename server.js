@@ -3,8 +3,7 @@ import path from "path"
 import { fileURLToPath } from "url";
 import axios from "axios"
 import fs from "fs"
-import { nextTick } from "process";
-import expressLayouts from "express-ejs-layouts";
+import dotenv from 'dotenv/config'
 
 const app = Express();
 const PORT = process.env.PORT || 3000;
@@ -18,13 +17,9 @@ app.use(Express.urlencoded({extended: false}));
 // Set static folder (disabled as dynamic assets are being used)
 app.use(Express.static(path.join(__dirname, 'public')));
 
-let myCss  ={
-    style : fs.readFileSync('./public/css/style.css', 'utf8')
-};
-
 // ROUTES
 app.get('/', (req, res) => {
-    axios.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY')
+    axios.get('https://api.nasa.gov/planetary/apod?api_key=' + `${process.env.secret}`)
     .then((response) => {
         console.log(response.data)
         const nasa = {
@@ -34,6 +29,7 @@ app.get('/', (req, res) => {
         }
         res.render('index.ejs', nasa)
     })
+    console.log(process.env)
 })
 
 app.listen (PORT, () => console.log(`Server started on Port: ${PORT}`))

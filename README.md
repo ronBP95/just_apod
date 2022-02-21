@@ -4,6 +4,7 @@
 <br>
 
 View Site:  [just_Apod](https://rm-just-apod.herokuapp.com/)
+Currently being hosted on Heroku services.
 
 <br>
 
